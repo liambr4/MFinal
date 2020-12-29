@@ -9,10 +9,6 @@ import master from "../images/Emblem_Master.png";
 import grandmaster from "../images/Emblem_Grandmaster.png";
 import challenger from "../images/Emblem_Challenger.png";
 class Summoner extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let flexwinloss = "";
     let solowinloss = "";
@@ -34,20 +30,20 @@ class Summoner extends Component {
 
     if (this.props.found) {
       return (
-        <div className="list-group">
+        <div style={{ paddingTop: "2%" }} className="list-group">
           <div className="list-group-item list-group-item-action">
             <div className="d-flex w-100">
               <div className="d-flex">
                 <img
-                  alt="Summoner Logo"
                   height={"100px"}
                   src={
                     "http://ddragon.leagueoflegends.com/cdn/10.23.1/img/profileicon/" +
                     this.props.icon +
                     ".png"
                   }
+                  alt={"Profile Icon: " + this.props.icon}
                 />
-                <div>
+                <div style={{ paddingLeft: "5%" }}>
                   <h1 className="mb-1 ">{this.props.name}</h1>
                   <h2>Level: {this.props.level}</h2>
                 </div>
@@ -63,59 +59,72 @@ class Summoner extends Component {
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={iron}
+                          alt="Iron Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "BRONZE" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={bronze}
+                          alt="Bronze Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "SILVER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={silver}
+                          alt="Silver Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "GOLD" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={gold}
+                          alt="Gold Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "PLATINUM" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={platinum}
+                          alt="Platinum Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "DIAMOND" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={diamond}
+                          alt="Diamond Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "MASTER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={master}
+                          alt="Master Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "GRANDMASTER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={grandmaster}
+                          alt="Grandmaster Icon"
                         ></img>
                       )}
                       {this.props.rank[0].tier === "CHALLENGER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={challenger}
+                          alt="Challenger Icon"
                         ></img>
                       )}
                     </h4>
                     <p>
-                      W/L- {solowinloss} % ({this.props.rank[0].wins} W /
+                      Total Matches:{" "}
+                      {this.props.rank[0].wins + this.props.rank[0].losses}
+                    </p>
+                    <p>
+                      W/L- {solowinloss}% ({this.props.rank[0].wins} W /
                       {" " + this.props.rank[0].losses} L)
                     </p>
                     <h4 className="mb-0">
@@ -125,59 +134,72 @@ class Summoner extends Component {
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={iron}
+                          alt="Iron Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "BRONZE" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={bronze}
+                          alt="Bronze Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "SILVER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={silver}
+                          alt="Silver Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "GOLD" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={gold}
+                          alt="Gold Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "PLATINUM" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={platinum}
+                          alt="Platinum Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "DIAMOND" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={diamond}
+                          alt="Diamond Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "MASTER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={master}
+                          alt="Master Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "GRANDMASTER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={grandmaster}
+                          alt="Grandmaster Icon"
                         ></img>
                       )}
                       {this.props.rank[1].tier === "CHALLENGER" && (
                         <img
                           style={{ width: "50px", height: "50px" }}
                           src={challenger}
+                          alt="Challenger Icon"
                         ></img>
                       )}
                     </h4>
                     <p>
-                      W/L- {flexwinloss} % ({this.props.rank[1].wins} W /
+                      Total Matches:{" "}
+                      {this.props.rank[1].wins + this.props.rank[1].losses}
+                    </p>
+                    <p>
+                      W/L- {flexwinloss}% ({this.props.rank[1].wins} W /
                       {" " + this.props.rank[1].losses} L)
                     </p>
                   </div>

@@ -11,6 +11,7 @@ const Match = (props) => (
           champion(props.match.champion) +
           ".png"
         }
+        alt={champion(props.match.champion) + " Icon"}
       ></img>
       <p>{champion(props.match.champion)}</p>
     </td>
@@ -19,19 +20,18 @@ const Match = (props) => (
     {Math.floor((Date.now() - props.match.timestamp) / 1000 / 60) < 60 && (
       <td>
         {Math.floor((Date.now() - props.match.timestamp) / 1000 / 60)} minutes
-        ago
       </td>
     )}
     {Math.floor((Date.now() - props.match.timestamp) / 1000 / 60 / 60) < 24 && (
       <td>
         {Math.floor((Date.now() - props.match.timestamp) / 1000 / 60 / 60)}{" "}
-        hours ago
+        hours
       </td>
     )}
     {Math.floor((Date.now() - props.match.timestamp) / 1000 / 60 / 60) > 24 && (
       <td>
         {Math.floor((Date.now() - props.match.timestamp) / 1000 / 60 / 60 / 24)}{" "}
-        days ago
+        days
       </td>
     )}
   </tr>
@@ -39,6 +39,7 @@ const Match = (props) => (
 //Champion played during match
 const champion = (props) => {
   for (const key in champions) {
+    //eslint-disable-next-line
     if (champions[key].key == props) {
       const champ = key;
       return champ;
@@ -67,9 +68,9 @@ export default class Matches extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
-              <th>Matches</th>
-              <th></th>
-              <th></th>
+              <th>Champion Played</th>
+              <th>Queue Type</th>
+              <th>Since Played</th>
             </tr>
           </thead>
           <tbody>{this.matches()}</tbody>

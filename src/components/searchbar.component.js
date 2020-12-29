@@ -104,13 +104,13 @@ export default class Searchbar extends Component {
 
   render() {
     return (
-      <div className>
+      <div>
         <form
           className="form-inline d-flex justify-content-center md-form form-sm"
           onSubmit={this.onSubmit}
         >
           <input
-            className="form-control form-control-sm mr-3 w-75"
+            className="form-control form-control-lg mr-3 w-75"
             type="text"
             placeholder="Search"
             aria-label="Search"
@@ -121,6 +121,7 @@ export default class Searchbar extends Component {
             icon={faSearch}
             aria-hidden="false"
             alt="Search Icon"
+            onClick={this.onSubmit}
           />
         </form>
         <div>
